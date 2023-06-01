@@ -1,0 +1,13 @@
+
+
+Importing file: /home/zoriox/Documents/dev/IIBWS/dleekam/Trace/TracingSOAP/TracingSOAP.wsdl
+
+The WSDL import will proceed with bindings TracingSOAPHttpBinding.
+Creating wsdl schema document for platform:/resource/TracingSOAP/TracingSOAP.wsdl.
+Parsing wsdl binding {http://TracingSOAP}TracingSOAPHttpBinding.
+Parsing wsdl binding input Trace.
+Parsing wsdl binding output Trace.
+Processing doc style for operation Trace.
+Populating WSDL schema TracingSOAP.xsd.
+Creating file TracingSOAP.xsd in the workspace.
+Copying source WSDL TracingSOAP.wsdl to TracingSOAP.wsdl.

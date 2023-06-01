@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="TracingSOAP" targetNamespace="http://TracingSOAP" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://TracingSOAP" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="TracingSOAPHttpBinding" originalBindingStyle="document"/>
+        <generatedXSD location="TracingSOAP_InlineSchema1.xsd"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  
+  
+  <wsdl:types>
+    
+        <xsd:schema targetNamespace="http://TracingSOAP" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+      <xsd:include schemaLocation="TracingSOAP_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="TraceRequestMsg">
+    <wsdl:part element="tns:Trace" name="TraceParameters"/>
+  </wsdl:message>
+  <wsdl:message name="TraceResponseMsg">
+    <wsdl:part element="tns:TraceResponse" name="TraceResult"/>
+  </wsdl:message>
+  <wsdl:portType name="TracingSOAP">
+    <wsdl:operation name="Trace">
+      <wsdl:input message="tns:TraceRequestMsg" name="TraceRequest"/>
+      <wsdl:output message="tns:TraceResponseMsg" name="TraceResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TracingSOAPHttpBinding" type="tns:TracingSOAP">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Trace">
+      <soap:operation soapAction="http://TracingSOAP/Trace"/>
+      <wsdl:input name="TraceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="TraceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    </wsdl:binding>
+  <wsdl:service name="TracingSOAPHttpService">
+    <wsdl:port binding="tns:TracingSOAPHttpBinding" name="TracingSOAPHttpPort">
+      <soap:address location="http://localhost:7800/TracingSOAP"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

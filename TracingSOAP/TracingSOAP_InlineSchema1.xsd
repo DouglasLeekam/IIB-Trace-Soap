@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://TracingSOAP" xmlns:tns="http://TracingSOAP">
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="Trace">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="TraceRequest" nillable="true" type="tns:BrokerType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="TraceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="TraceResponse" nillable="true" type="tns:TraceResponseType" maxOccurs="unbounded" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:element name="Broker" type="tns:BrokerType"/>
+
+      <xsd:complexType name="BrokerType">
+      	<xsd:sequence>
+      		<xsd:element default="WRITE_YOUR_BROKER_NAME" maxOccurs="1" minOccurs="1" name="BrokerName" type="xsd:string">
+      			<xsd:annotation>
+      				<xsd:documentation>The user will set the broker name on this field</xsd:documentation>
+      			</xsd:annotation>
+      			
+      			
+      			</xsd:element>
+      		<xsd:element default="WRITE_YOUR_EXECUTIONGROUP_NAME" maxOccurs="1" minOccurs="1" name="ExcutionGroup" type="xsd:string">
+      			<xsd:annotation>
+      				<xsd:documentation>The user will set the execution group on this field, Note: the execution group must exists.</xsd:documentation>
+      			</xsd:annotation>
+      </xsd:element>
+      		<xsd:element default="start|stop" maxOccurs="1" minOccurs="1" name="signal" type="xsd:string">
+      			<xsd:annotation>
+      				<xsd:documentation>The signar is either, start or stop</xsd:documentation>
+      			</xsd:annotation>
+      </xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="TraceResponseType">
+      	<xsd:sequence>
+      		<xsd:element name="item" type="tns:resultItem" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="resultItem">
+      	<xsd:sequence>
+      		<xsd:element name="command" type="xsd:string"></xsd:element>
+      		<xsd:element name="Result" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Body>
+    <TraceResponse>
+      <item>
+        <command>mqsireadlog TESTNODE_zoriox -u -e test -f -o /var/mqsi/test.xml</command>
+        <Result>BIP8071I: Successful command completion. </Result>
+      </item>
+      <item>
+        <command>mqsiformatlog -i /var/mqsi/test.xml  -o /var/mqsi/test.txt</command>
+        <Result>BIP8071I: Successful command completion. </Result>
+      </item>
+      <item>
+        <command>mqsichangetrace TESTNODE_zoriox -t -b -l none</command>
+        <Result>BIP8071I: Successful command completion. </Result>
+      </item>
+      <item>
+        <command>mqsichangetrace TESTNODE_zoriox  -n off -e test</command>
+        <Result>BIP8071I: Successful command completion. </Result>
+      </item>
+      <item>
+        <command>mqsichangetrace TESTNODE_zoriox  -n off -e test</command>
+        <Result>BIP8071I: Successful command completion. </Result>
+      </item>
+      <item>
+        <command>/var/mqsi/test.txt</command>
+        <Result>Timestamps are formatted in local time, 180 minutes before GMT.
+Trace written by version 100026; formatter version 100026 (build S1000-L220408.12924 on amd64_linux_2)
+Integration node : TESTNODE_zoriox ; Integration server : test ; Trace type : user
+
+2023-05-24 01:49:15.263399    59718   UserTrace   BIP4040I: The integration server ''test'' has processed a configuration message successfully. 
+                                       A configuration message has been processed successfully. Any configuration changes have been made and stored persistently. 
+                                       No user action required. 
+2023-05-24 01:49:15.263660    59718   Information  BIP2154I: Integration server finished with Configuration message. 
+                                       A command response will be sent to the integration node. 
+                                       No user action required. 
+2023-05-24 01:49:15.263688    59718   UserTrace   BIP11304I: The Parser of type ''XMLS'' has been deleted from address ''0x7f39600631b0''. This thread now has ''6'' cached parsers. 
+2023-05-24 01:49:15.263712    59718   UserTrace   BIP11304I: The Parser of type ''MQROOT'' has been deleted from address ''0x7f39600551a0''. This thread now has ''5'' cached parsers. 
+2023-05-24 01:49:15.263726    59718   UserTrace   BIP11304I: The Parser of type ''MQMD'' has been deleted from address ''0x7f396005fbb0''. This thread now has ''4'' cached parsers. 
+2023-05-24 01:49:15.263777    59718   UserTrace   BIP11305I: The Parser of type ''XMLS'' at address ''0x7f3960067340'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:49:15.263782    59718   UserTrace   BIP11305I: The Parser of type ''MQROOT'' at address ''0x7f3960047a60'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:49:15.263784    59718   UserTrace   BIP11305I: The Parser of type ''MQMD'' at address ''0x7f396005c440'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:49:15.263788    59718   UserTrace   BIP11305I: The Parser of type ''Properties'' at address ''0x7f39600585c0'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:49:15.263817    59718   UserTrace   BIP11504I: Waiting for data from input node ''InputNode''. 
+                                       A thread is waiting for data from input node ''InputNode'' in flow ''''. 
+2023-05-24 01:50:06.567901    59718   UserTrace   BIP3907I: Message received and propagated to 'out' terminal of input node '.InputNode'. 
+2023-05-24 01:50:06.568022    59718   UserTrace   BIP11303I: A Parser of type ''MQROOT'' has been created at address ''0x7f39600551a0''. This thread now has ''5'' cached parsers. 
+2023-05-24 01:50:06.568033    59718   UserTrace   BIP6060I: Node '.InputNode' used parser type ''Properties'' to process a portion of the incoming message of length '0' bytes beginning at offset '0'. 
+2023-05-24 01:50:06.568044    59718   UserTrace   BIP6061I: Node '.InputNode' used parser type ''MQMD'' to process a portion of the incoming message of length '364' bytes beginning at offset '0'. The parser type was selected based on value ''MQHMD'' from the previous parser. 
+2023-05-24 01:50:06.568048    59718   UserTrace   BIP11303I: A Parser of type ''MQMD'' has been created at address ''0x7f396005fbb0''. This thread now has ''6'' cached parsers. 
+2023-05-24 01:50:06.568055    59718   UserTrace   BIP11303I: A Parser of type ''XMLS'' has been created at address ''0x7f39600631b0''. This thread now has ''7'' cached parsers. 
+2023-05-24 01:50:06.568103    59718   UserTrace   BIP6061I: Node '.InputNode' used parser type ''XMLS'' to process a portion of the incoming message of length '271' bytes beginning at offset '364'. The parser type was selected based on value ''XMLS'' from the previous parser. 
+2023-05-24 01:50:06.568175    59718   Information  BIP2152I: Configuration message received from integration node. 
+                                       An integration server received a command from the integration node. 
+                                       No user action required. 
+2023-05-24 01:50:06.568194    59718   Information  BIP2153I: About to ''Change'' an integration server. 
+                                       An integration server is about to perform an action. 
+                                       No user action required. 
+2023-05-24 01:50:06.593715    59718   UserTrace   BIP4040I: The integration server ''test'' has processed a configuration message successfully. 
+                                       A configuration message has been processed successfully. Any configuration changes have been made and stored persistently. 
+                                       No user action required. 
+2023-05-24 01:50:06.593928    59718   Information  BIP2154I: Integration server finished with Configuration message. 
+                                       A command response will be sent to the integration node. 
+                                       No user action required. 
+2023-05-24 01:50:06.593939    59718   UserTrace   BIP11304I: The Parser of type ''XMLS'' has been deleted from address ''0x7f39600631b0''. This thread now has ''6'' cached parsers. 
+2023-05-24 01:50:06.593946    59718   UserTrace   BIP11304I: The Parser of type ''MQROOT'' has been deleted from address ''0x7f39600551a0''. This thread now has ''5'' cached parsers. 
+2023-05-24 01:50:06.593949    59718   UserTrace   BIP11304I: The Parser of type ''MQMD'' has been deleted from address ''0x7f396005fbb0''. This thread now has ''4'' cached parsers. 
+2023-05-24 01:50:06.593971    59718   UserTrace   BIP11305I: The Parser of type ''XMLS'' at address ''0x7f3960067340'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:50:06.593975    59718   UserTrace   BIP11305I: The Parser of type ''MQROOT'' at address ''0x7f3960047a60'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:50:06.593977    59718   UserTrace   BIP11305I: The Parser of type ''MQMD'' at address ''0x7f396005c440'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:50:06.593980    59718   UserTrace   BIP11305I: The Parser of type ''Properties'' at address ''0x7f39600585c0'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:50:06.593999    59718   UserTrace   BIP11504I: Waiting for data from input node ''InputNode''. 
+                                       A thread is waiting for data from input node ''InputNode'' in flow ''''. 
+2023-05-24 01:51:47.732224    59718   UserTrace   BIP3907I: Message received and propagated to 'out' terminal of input node '.InputNode'. 
+2023-05-24 01:51:47.732348    59718   UserTrace   BIP11303I: A Parser of type ''MQROOT'' has been created at address ''0x7f39600551a0''. This thread now has ''5'' cached parsers. 
+2023-05-24 01:51:47.732360    59718   UserTrace   BIP6060I: Node '.InputNode' used parser type ''Properties'' to process a portion of the incoming message of length '0' bytes beginning at offset '0'. 
+2023-05-24 01:51:47.732372    59718   UserTrace   BIP6061I: Node '.InputNode' used parser type ''MQMD'' to process a portion of the incoming message of length '364' bytes beginning at offset '0'. The parser type was selected based on value ''MQHMD'' from the previous parser. 
+2023-05-24 01:51:47.732376    59718   UserTrace   BIP11303I: A Parser of type ''MQMD'' has been created at address ''0x7f396005fbb0''. This thread now has ''6'' cached parsers. 
+2023-05-24 01:51:47.732384    59718   UserTrace   BIP11303I: A Parser of type ''XMLS'' has been created at address ''0x7f39600631b0''. This thread now has ''7'' cached parsers. 
+2023-05-24 01:51:47.732424    59718   UserTrace   BIP6061I: Node '.InputNode' used parser type ''XMLS'' to process a portion of the incoming message of length '271' bytes beginning at offset '364'. The parser type was selected based on value ''XMLS'' from the previous parser. 
+2023-05-24 01:51:47.732500    59718   Information  BIP2152I: Configuration message received from integration node. 
+                                       An integration server received a command from the integration node. 
+                                       No user action required. 
+2023-05-24 01:51:47.732524    59718   Information  BIP2153I: About to ''Change'' an integration server. 
+                                       An integration server is about to perform an action. 
+                                       No user action required. 
+2023-05-24 01:51:47.758724    59718   UserTrace   BIP4040I: The integration server ''test'' has processed a configuration message successfully. 
+                                       A configuration message has been processed successfully. Any configuration changes have been made and stored persistently. 
+                                       No user action required. 
+2023-05-24 01:51:47.758852    59718   Information  BIP2154I: Integration server finished with Configuration message. 
+                                       A command response will be sent to the integration node. 
+                                       No user action required. 
+2023-05-24 01:51:47.758872    59718   UserTrace   BIP11304I: The Parser of type ''XMLS'' has been deleted from address ''0x7f39600631b0''. This thread now has ''6'' cached parsers. 
+2023-05-24 01:51:47.758896    59718   UserTrace   BIP11304I: The Parser of type ''MQROOT'' has been deleted from address ''0x7f39600551a0''. This thread now has ''5'' cached parsers. 
+2023-05-24 01:51:47.758900    59718   UserTrace   BIP11304I: The Parser of type ''MQMD'' has been deleted from address ''0x7f396005fbb0''. This thread now has ''4'' cached parsers. 
+2023-05-24 01:51:47.758928    59718   UserTrace   BIP11305I: The Parser of type ''XMLS'' at address ''0x7f3960067340'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:51:47.758932    59718   UserTrace   BIP11305I: The Parser of type ''MQROOT'' at address ''0x7f3960047a60'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:51:47.758932    59718   UserTrace   BIP11305I: The Parser of type ''MQMD'' at address ''0x7f396005c440'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:51:47.758936    59718   UserTrace   BIP11305I: The Parser of type ''Properties'' at address ''0x7f39600585c0'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:51:47.758968    59718   UserTrace   BIP11504I: Waiting for data from input node ''InputNode''. 
+                                       A thread is waiting for data from input node ''InputNode'' in flow ''''. 
+2023-05-24 01:52:23.582590    59718   UserTrace   BIP3907I: Message received and propagated to 'out' terminal of input node '.InputNode'. 
+2023-05-24 01:52:23.582702    59718   UserTrace   BIP11303I: A Parser of type ''MQROOT'' has been created at address ''0x7f39600551a0''. This thread now has ''5'' cached parsers. 
+2023-05-24 01:52:23.582718    59718   UserTrace   BIP6060I: Node '.InputNode' used parser type ''Properties'' to process a portion of the incoming message of length '0' bytes beginning at offset '0'. 
+2023-05-24 01:52:23.582726    59718   UserTrace   BIP6061I: Node '.InputNode' used parser type ''MQMD'' to process a portion of the incoming message of length '364' bytes beginning at offset '0'. The parser type was selected based on value ''MQHMD'' from the previous parser. 
+2023-05-24 01:52:23.582732    59718   UserTrace   BIP11303I: A Parser of type ''MQMD'' has been created at address ''0x7f396005fbb0''. This thread now has ''6'' cached parsers. 
+2023-05-24 01:52:23.582738    59718   UserTrace   BIP11303I: A Parser of type ''XMLS'' has been created at address ''0x7f39600631b0''. This thread now has ''7'' cached parsers. 
+2023-05-24 01:52:23.582786    59718   UserTrace   BIP6061I: Node '.InputNode' used parser type ''XMLS'' to process a portion of the incoming message of length '271' bytes beginning at offset '364'. The parser type was selected based on value ''XMLS'' from the previous parser. 
+2023-05-24 01:52:23.582856    59718   Information  BIP2152I: Configuration message received from integration node. 
+                                       An integration server received a command from the integration node. 
+                                       No user action required. 
+2023-05-24 01:52:23.582874    59718   Information  BIP2153I: About to ''Change'' an integration server. 
+                                       An integration server is about to perform an action. 
+                                       No user action required. 
+2023-05-24 01:52:23.597444    59718   UserTrace   BIP4040I: The integration server ''test'' has processed a configuration message successfully. 
+                                       A configuration message has been processed successfully. Any configuration changes have been made and stored persistently. 
+                                       No user action required. 
+2023-05-24 01:52:23.597562    59718   Information  BIP2154I: Integration server finished with Configuration message. 
+                                       A command response will be sent to the integration node. 
+                                       No user action required. 
+2023-05-24 01:52:23.597572    59718   UserTrace   BIP11304I: The Parser of type ''XMLS'' has been deleted from address ''0x7f39600631b0''. This thread now has ''6'' cached parsers. 
+2023-05-24 01:52:23.597582    59718   UserTrace   BIP11304I: The Parser of type ''MQROOT'' has been deleted from address ''0x7f39600551a0''. This thread now has ''5'' cached parsers. 
+2023-05-24 01:52:23.597586    59718   UserTrace   BIP11304I: The Parser of type ''MQMD'' has been deleted from address ''0x7f396005fbb0''. This thread now has ''4'' cached parsers. 
+2023-05-24 01:52:23.597602    59718   UserTrace   BIP11305I: The Parser of type ''XMLS'' at address ''0x7f3960067340'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:52:23.597606    59718   UserTrace   BIP11305I: The Parser of type ''MQROOT'' at address ''0x7f3960047a60'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:52:23.597606    59718   UserTrace   BIP11305I: The Parser of type ''MQMD'' at address ''0x7f396005c440'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:52:23.597610    59718   UserTrace   BIP11305I: The Parser of type ''Properties'' at address ''0x7f39600585c0'' has been reset ready for re-use. This thread has ''4'' cached parsers. 
+2023-05-24 01:52:23.597624    59718   UserTrace   BIP11504I: Waiting for data from input node ''InputNode''. 
+                                       A thread is waiting for data from input node ''InputNode'' in flow ''''. 
+
+Threads encountered in this trace:
+  59718
+</Result>
+      </item>
+    </TraceResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
